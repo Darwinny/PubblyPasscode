@@ -1,0 +1,93 @@
+#logo2016 {
+    display: block;
+    margin: 50px auto;
+    width: 90%;
+    max-width: 1000px;
+}
+
+.loginDesignh2 {
+    text-align: center;
+}
+
+@media (min-width: 800px) {
+    #logo2016 {
+        width: 70%;
+    }
+}
+
+@media (min-width: 1400px) {
+    #logo2016 {
+        width: 50%;
+    }
+}
+
+.formCont {
+    display: block;
+    margin: 50px auto;
+    width: 350px;
+    padding: 15px;
+    border: 0px solid RGBA(240, 240, 240, 0.5);
+    border-radius: 35px;
+}
+
+form h2 {
+    text-align: left;
+    color: #8867ac;
+    font-family: sans-serif;
+    letter-spacing: 1px;
+    font-size: 1.2em;
+    margin-bottom: 35px;
+}
+
+form span {
+    color: #91bd49;
+    font-family: sans-serif;
+    letter-spacing: 1px;
+    font-size: 1.2em;
+}
+
+form input {
+    font-size: 2em;
+    color: #e36324;
+    padding-left: 5px;
+    letter-spacing: 1px;
+    border: 2px solid #91bd49;
+    height: 50px;
+    width: calc(100% - 44px);
+    border-radius: 5px;
+    margin: 20px;
+    background-color: white;
+}
+
+form input#submit {
+    display: block;
+    width: 150px;
+    height: 55px;
+    border: 1px solid #8867ac;
+    background-color: #8867ac;
+    color: white;
+    font-size: 1em;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin: 5px auto;
+}
+
+form input#submit:hover {
+    border: 3px solid #91bd49;
+    cursor: pointer;
+}
+
+form a {
+    display: block;
+    width: 73px;
+    margin: 25px auto 0px auto;
+}
+
+form .error {
+    color: red;
+    width: 100%;
+    text-align: center;
+    display: none;
+    margin: 0;
+    font-size: 18px;
+}

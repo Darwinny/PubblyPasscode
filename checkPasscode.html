@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Passcode required</title>
+    <link rel="stylesheet" href="../css/bookPasscode.css"/>
+    <script src="../js/jquery-1.11.3.min.js"></script>
+    <script src="../js/sha512.js"></script>
+    <script>
+        window.bookID = "{curID}";
+        window.badPass = "{badPass}";
+    </script>
+</head>
+<body>
+<div id="logo">
+    <img id="logo2016" src="../assets/pubblylogo2016.svg">
+</div>
+<div class="formCont">
+    <form class="loginForm" name="processLogin" method="POST">
+        <h2>
+			For demonstration purposes only</h2>
+        <span>Enter Passcode:</span>
+        <input type="password" name="passcode"><br>
+
+        <p class="error">Wrong passcode!</p>
+        <br>
+        <input id="submit" type="submit" value="View Sample"">
+       
+    </form>
+</div>
+</body>
+</html>
+<script>
+    $(document).ready(function () {
+        $("#submit").click(function (e) {
+            var pass = this.form.passcode.value;
+            if (pass == "") {
+                alert("password cannot be blank");
+                e.preventDefault();
+            } else {
+                var whichBook = document.createElement("input");
+                whichBook.setAttribute("type", "hidden");
+                whichBook.setAttribute("name", "bookID");
+                whichBook.setAttribute("value", window.bookID);
+                this.form.appendChild(whichBook);
+
+                var passAct = document.createElement("input");
+                passAct.setAttribute("type", "hidden");
+                passAct.setAttribute("name", "passAct");
+                passAct.setAttribute("value", hex_sha512(pass));
+                this.form.appendChild(passAct);
+
+                this.form.passcode.value = "";
+                this.form.action = "";
+                $(this.form).submit();
+            }
+        });
+        if (window.badPass && window.badPass !== "{" + "badPass" + "}") {
+            $(".error").css("display", "block");
+            window.setTimeout(function () {
+                $(".error").css("visibility", "hidden");
+            }, 100);
+            window.setTimeout(function () {
+                $(".error").css("visibility", "visible");
+            }, 300);
+            window.setTimeout(function () {
+                $(".error").css("visibility", "hidden");
+            }, 500);
+            window.setTimeout(function () {
+                $(".error").css("visibility", "visible");
+            }, 700);
+        }
+    });
+</script>
