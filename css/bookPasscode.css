@@ -1,3 +1,26 @@
+#logo2016 {
+    display: block;
+    margin: 50px auto;
+    width: 90%;
+    max-width: 1000px;
+}
+
+.loginDesignh2 {
+    text-align: center;
+}
+
+@media (min-width: 800px) {
+    #logo2016 {
+        width: 70%;
+    }
+}
+
+@media (min-width: 1400px) {
+    #logo2016 {
+        width: 50%;
+    }
+}
+
 .formCont {
     display: block;
     margin: 50px auto;
@@ -33,6 +56,7 @@ form input {
     width: calc(100% - 44px);
     border-radius: 5px;
     margin: 20px;
+    background-color: rgb(250, 255, 189);
 }
 
 form input#submit {
